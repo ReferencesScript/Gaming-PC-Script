@@ -1,7 +1,7 @@
 This is the hats for the FE Gaming PC script :
 
 - https://www.roblox.com/catalog/9402627690/We-want-Peace-Sign
-(get this item from this game https://www.roblox.com/games/8528736393/Beatland and watch this tutorial on how to get the item https://www.youtube.com/watch?v=g26a5-fXM94&t=131s)
+(get this item from this game https://www.roblox.com/games/8528736393/Beatland and execute this script to get the item instantly https://raw.githubusercontent.com/ReferencesScript/Beatladn-script/main/Sign%20script)
 
 - https://www.roblox.com/catalog/2309346267/Classic-PC-Hat
 (get this item from this game https://www.roblox.com/games/2546610365/Roblox-Creator-Challenge and complete all challenges by answering 3-4 questions correctly in every stage)
