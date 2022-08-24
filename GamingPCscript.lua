@@ -1,7 +1,49 @@
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "FE Gaming PC";
+	Text = "Made By References#5693"})
+Duration = 1;
+
 game:GetService("RunService").Heartbeat:Wait();
    settings().Physics.AllowSleep = false;
    game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.huge;
    setsimulationradius(math.huge);
+
+local realfenv
+realfenv = hookfunction(getgenv().getfenv,function(a)
+    local num = tonumber(a)
+    if num then
+        if num > 10 or num < 1 then
+            error("Skill issue")
+        else
+            return realfenv()
+        end
+    else
+        return realfenv()
+    end
+end)
+ 
+local maxSim = 1000
+getgenv().setsimulationradius = newcclosure(function(i,v)
+    local plr = game.Players.LocalPlayer
+    sethiddenproperty(plr,"MaxSimulationRadius",maxSim)
+    sethiddenproperty(plr,"SimulationRadius",maxSim)
+end)
+ 
+local sethidden
+sethidden = hookfunction(getgenv().sethiddenproperty,function(i,p,v)
+    local plr = game.Players.LocalPlayer
+    if i == plr then
+        if (p == "MaxSimulationRadius" or p == "SimulationRadius") then
+            if v == maxSim then
+                sethidden(i,p,v)
+            end
+        else
+            sethidden(i,p,v)
+        end
+    else
+        sethidden(i,p,v)
+    end
+end)
 
 loadstring(game:HttpGet("https://pastebin.com/raw/tUUGAeaH", true))()
 
@@ -54,6 +96,8 @@ local Align = function(Part0, Part1,Mesh)
  return {Attachments.Attach0, Attachments, Aligns}
 
 end 
+
+wait()
 local hat = Align(char['PeaceSign_01'].Handle,char['Torso'],true)
 local hnd = char['Torso'].CFrame*CFrame.new(0,-0.1,0)*CFrame.Angles(math.rad(-270),math.rad(0),0)
 local hat1 = Align(char['Pal Hair'].Handle,char['Left Arm'],true)
@@ -66,8 +110,8 @@ local hat4 = Align(char['LavanderHair'].Handle,char['Right Leg'],true)
 local hnd4 = char['Right Leg'].CFrame*CFrame.new(1,1,1)*CFrame.Angles(math.rad(-270),math.rad(0),0)
 local hat5 = Align(char['LUAhEAD'].Handle,char['Head'],false)
 local hnd5 = char['Head'].CFrame*CFrame.new(0,-0.7,1)*CFrame.Angles(math.rad(0),math.rad(0),0)
-local hat6 = Align(char['WDW_FoamFinger'].Handle,char['Head'],true)
-local hnd6 = char['Head'].CFrame*CFrame.new(0,-1.5,-0.7)*CFrame.Angles(math.rad(-270),math.rad(0),-55)
+local hat6 = Align(char['8BitController'].Handle,char['Head'],false)
+local hnd6 = char['Head'].CFrame*CFrame.new(0,-1.5,-0.7)*CFrame.Angles(math.rad(-270),math.rad(-540),0)
 hat[1].CFrame = hnd:Inverse() * char['Torso'].CFrame
 hat1[1].CFrame = hnd1:Inverse() * char['Left Arm'].CFrame
 hat2[1].CFrame = hnd2:Inverse() * char['Right Arm'].CFrame
@@ -94,10 +138,6 @@ game.Players.LocalPlayer.Character["Kate Hair"].Handle.Anchored = true
 game.Players.LocalPlayer.Character["Pink Hair"].Handle.Anchored = true
 game.Players.LocalPlayer.Character["LavanderHair"].Handle.Anchored = true
 game.Players.LocalPlayer.Character["LUAhEAD"].Handle.Anchored = true
-game.Players.LocalPlayer.Character["WDW_FoamFinger"].Handle.Anchored = true
+game.Players.LocalPlayer.Character["8BitController"].Handle.Anchored = true
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
 game.Players.LocalPlayer.Character.Animate.Disabled = false
-
-wait()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/nSABa0Gb", true))()
